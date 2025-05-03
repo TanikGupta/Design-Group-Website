@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe India: Solutions for Reducing Rape and Murder Cases</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #111;
+            color: #f3f4f6;
+        }
+        .section {
+            scroll-margin-top: 80px;
+        }
+        .pink-accent {
+            color: #ec4899;
+        }
+        .bg-pink-accent {
+            background-color: #ec4899;
+        }
+        .hover-pink:hover {
+            color: #f472b6;
+        }
+        .border-pink {
+            border-color: #ec4899;
+        }
+    </style>
+</head>
+<body class="bg-black text-gray-100">
+    <!-- Navigation Bar -->
+    <nav class="bg-black text-pink-500 fixed w-full z-10 top-0 shadow-lg border-b border-pink-900">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Safe India</h1>
+            <div class="space-x-6">
+                <a href="#home" class="hover-pink">Home</a>
+                <a href="#languages" class="hover-pink">Languages</a>
+                <a href="#contact" class="hover-pink">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-gradient-to-b from-black to-gray-900 text-white py-20 text-center border-b border-pink-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-4">Together for a Safer India</h2>
+            <p class="text-lg mb-6">Raising awareness and promoting solutions to reduce rape and murder cases in India.</p>
+            <a href="#solutions" class="bg-pink-accent text-white px-6 py-3 rounded-full font-semibold hover:bg-pink-600">Learn About Solutions</a>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section id="solutions" class="section py-16 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Solutions to Combat Rape and Murder Cases</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-pink-500">
+                    <i class="fas fa-gavel pink-accent text-3xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Data and statistics</h3>
+                    <p>Giving data and statistics of cases which may be relatable to what you are looking for.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-pink-500">
+                    <i class="fas fa-book pink-accent text-3xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Education and Awareness</h3>
+                    <p>Promote gender sensitization programs in schools and communities to foster respect and equality.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-pink-500">
+                    <a href="javascript:void(0)" onclick="openRoadmap()" class="block">
+                        <i class="fas fa-shield-alt pink-accent text-3xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Roadmap for Legal Action</h3>
+                        <p>Empowering victims with knowledge of each legal step ensures better access to justice.</p>
+                    </a>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-pink-500">
+                    <i class="fas fa-users pink-accent text-3xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Community Support</h3>
+                    <p>Encourage community vigilance groups and safe spaces for victims to seek help without stigma.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-pink-500">
+                    <i class="fas fa-laptop pink-accent text-3xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Technical Solutions</h3>
+                    <p>Develop apps for emergency alerts, GPS tracking, and anonymous reporting to enhance safety.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-pink-500 cursor-pointer" onclick="openVictimSupportPage()">
+                    <i class="fas fa-heart pink-accent text-3xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Victim Support</h3>
+                    <p>Click to access our support services and online seminars for victims and families.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="section py-16 bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Resources and Support</h2>
+            <div class="space-y-6">
+                <div class="bg-gray-900 p-6 rounded-lg shadow-md border-l-4 border-pink-500">
+                    <h3 class="text-xl font-semibold mb-2">Helplines</h3>
+                    <p>National Women Helpline: <a href="tel:181" class="text-pink-400 hover:underline">181</a><br>
+                       Police Emergency: <a href="tel:100" class="text-pink-400 hover:underline">100</a></p>
+                </div>
+                <div class="bg-gray-900 p-6 rounded-lg shadow-md border-l-4 border-pink-500">
+                    <h3 class="text-xl font-semibold mb-2">NGOs and Organizations</h3>
+                    <p>Connect with organizations like <a href="https://www.ncw.nic.in" class="text-pink-400 hover:underline">National Commission for Women</a> and local NGOs for support and advocacy.</p>
+                </div>
+                <div class="bg-gray-900 p-6 rounded-lg shadow-md border-l-4 border-pink-500">
+                    <h3 class="text-xl font-semibold mb-2">Legal Resources</h3>
+                    <p>Learn about your rights under laws like the Protection of Women from Domestic Violence Act and access free legal aid services.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section py-16 bg-black text-white border-t border-pink-900">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-8">Get Involved</h2>
+            <p class="text-lg mb-6">Join us in creating a safer India. Share your ideas, volunteer, or report concerns.</p>
+            <div class="max-w-md mx-auto">
+                <input type="email" placeholder="Your Email" class="w-full p-3 mb-4 rounded-lg text-gray-900">
+                <textarea placeholder="Your Message" class="w-full p-3 mb-4 rounded-lg text-gray-900 h-32"></textarea>
+                <button class="bg-pink-accent text-white px-6 py-3 rounded-full font-semibold hover:bg-pink-600">Send Message</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-400 py-6 border-t border-pink-900">
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2025 Safe India. All rights reserved.</p>
+            <div class="mt-2">
+                <a href="#" class="hover-pink mx-2"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover-pink mx-2"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover-pink mx-2"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Basic form submission handling
+        const contactButton = document.querySelector('button');
+        contactButton.addEventListener('click', () => {
+            const email = document.querySelector('input[type="email"]').value;
+            const message = document.querySelector('textarea').value;
+            if (email && message) {
+                alert('Thank you for your message! We will get back to you soon.');
+                document.querySelector('input[type="email"]').value = '';
+                document.querySelector('textarea').value = '';
+            } else {
+                alert('Please fill in all fields.');
+            }
+        });
+
+        // Open roadmap in new window
+        function openRoadmap() {
+            const roadmapContent = `
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Legal Roadmap - Safe India</title>
+                    <script src="https://cdn.tailwindcss.com"><\/script>
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+                    <style>
+                        body {
+                            font-family: 'Arial', sans-serif;
+                            background-color: #111;
+                            color: #f3f4f6;
+                        }
+                        .pink-accent {
+                            color: #ec4899;
+                        }
+                    </style>
+                </head>
+                <body class="bg-black text-gray-100">
+                    <div class="container mx-auto px-4 py-16 max-w-3xl">
+                        <div class="bg-gray-900 p-8 rounded-lg shadow-lg border-l-4 border-pink-500">
+                            <a href="javascript:window.close()" class="text-pink-400 hover:underline mb-4 inline-block">&larr; Close</a>
+                            <h1 class="text-3xl font-bold pink-accent mb-6">Roadmap for Legal Action</h1>
+                            <ol class="list-decimal pl-6 space-y-6">
+                                <li>
+                                    <strong class="text-lg">Reporting the Crime</strong>
+                                    <p class="mt-2">Victim or witness approaches the police station to report the incident.</p>
+                                </li>
+                                <li>
+                                    <strong class="text-lg">Filing the FIR (First Information Report)</strong>
+                                    <p class="mt-2">FIR is registered under relevant IPC sections (e.g., 302 for murder, 376 for rape). A copy is given to the complainant free of cost.</p>
+                                </li>
+                                <li>
+                                    <strong class="text-lg">Medical Examination</strong>
+                                    <p class="mt-2">Mandatory for rape cases. Victim and sometimes the accused undergo medical tests. Important forensic evidence is collected.</p>
+                                </li>
+                                <li>
+                                    <strong class="text-lg">Police Investigation</strong>
+                                    <p class="mt-2">Collection of evidence (CCTV, phone records, witness statements, forensic reports). Arrest of the accused if sufficient grounds exist.</p>
+                                </li>
+                                <li>
+                                    <strong class="text-lg">Chargesheet Submission</strong>
+                                    <p class="mt-2">Police files a chargesheet (typically within 60–90 days) detailing all findings and charges.</p>
+                                </li>
+                                <li>
+                                    <strong class="text-lg">Court Proceedings Begin</strong>
+                                    <p class="mt-2">Charges are framed by the court after reviewing the chargesheet. The accused pleads guilty or not guilty.</p>
+                                </li>
+                                <li>
+                                    <strong class="text-lg">Trial</strong>
+                                    <p class="mt-2">Examination of witnesses and cross-questioning. Presentation of evidence by prosecution and defense.</p>
+                                </li>
+                                <li>
+                                    <strong class="text-lg">Judgment</strong>
+                                    <p class="mt-2">Based on evidence and arguments, the judge delivers a verdict: acquittal or conviction. If convicted, sentencing follows.</p>
+                                </li>
+                                <li>
+                                    <strong class="text-lg">Appeal (if any)</strong>
+                                    <p class="mt-2">Either party can appeal to a higher court if dissatisfied with the verdict.</p>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </body>
+                </html>
+            `;
+            
+            const newWindow = window.open('', '_blank');
+            newWindow.document.write(roadmapContent);
+            newWindow.document.close();
+        }
+
+        function openVictimSupportPage() {
+            const victimSupportPage = `
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Victim Support - Safe India</title>
+                <script src="https://cdn.tailwindcss.com"><\/script>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+                <style>
+                    body { 
+                        font-family: 'Arial', sans-serif;
+                        background-color: #111;
+                        color: #f3f4f6;
+                    }
+                    .pink-accent {
+                        color: #ec4899;
+                    }
+                    .bg-pink-accent {
+                        background-color: #ec4899;
+                    }
+                    .option-block:hover { 
+                        transform: translateY(-5px);
+                        box-shadow: 0 10px 15px -3px rgba(236, 72, 153, 0.3);
+                    }
+                </style>
+            </head>
+            <body class="bg-black text-gray-100">
+                <div class="container mx-auto px-4 py-16">
+                    <div class="text-center mb-12">
+                        <a href="javascript:window.close()" class="inline-block text-pink-400 hover:underline mb-6">
+                            <i class="fas fa-arrow-left mr-2"></i> Back to Safe India
+                        </a>
+                        <h1 class="text-3xl font-bold pink-accent mb-4">Victim Support Portal</h1>
+                        <p class="text-lg text-gray-400">Choose an option to access support resources</p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                        <!-- Our Services Block -->
+                        <div class="option-block bg-gray-900 p-8 rounded-xl shadow-md border-l-4 border-pink-500 transition duration-300 cursor-pointer" 
+                             onclick="window.location.href='services.html'">
+                            <div class="pink-accent mb-4">
+                                <i class="fas fa-hands-helping text-4xl"></i>
+                            </div>
+                            <h2 class="text-2xl font-bold text-gray-100 mb-3">Our Services</h2>
+                            <p class="text-gray-400 mb-4">Access our comprehensive support services including counseling, legal aid, and medical assistance.</p>
+                            <div class="pink-accent font-medium">
+                                Explore Services <i class="fas fa-arrow-right ml-2"></i>
+                            </div>
+                        </div>
+                        
+                        <!-- Online Seminars Block -->
+                        <div class="option-block bg-gray-900 p-8 rounded-xl shadow-md border-l-4 border-pink-500 transition duration-300 cursor-pointer"
+                             onclick="window.location.href='seminars.html'">
+                            <div class="pink-accent mb-4">
+                                <i class="fas fa-laptop-house text-4xl"></i>
+                            </div>
+                            <h2 class="text-2xl font-bold text-gray-100 mb-3">Online Seminars</h2>
+                            <p class="text-gray-400 mb-4">Join our webinars and workshops on trauma recovery, legal rights, and safety planning.</p>
+                            <div class="pink-accent font-medium">
+                                View Schedule <i class="fas fa-arrow-right ml-2"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-12 text-gray-500">
+                        <p>Need immediate help? Call our 24/7 helpline: <a href="tel:1091" class="text-pink-400 font-medium">1091</a></p>
+                    </div>
+                </div>
+            </body>
+            </html>
+            `;
+            
+            const newWindow = window.open('', '_blank', 'width=1000,height=700');
+            newWindow.document.write(victimSupportPage);
+            newWindow.document.close();
+        }
+    </script>
+</body>
+</html>

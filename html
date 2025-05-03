@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Class Strength Tracker</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+        }
+        .input-form {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .data-display {
+            margin-top: 20px;
+            border: 1px solid #eee;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .graph-placeholder {
+            width: 100%;
+            height: 300px;
+            background-color: #f9f9f9;
+            text-align: center;
+            line-height: 300px;
+            color: #777;
+            border: 1px dashed #ccc;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Daily Class Strength Tracker</h1>
+
+    <div class="input-form">
+        <h2>Enter Today's Strength</h2>
+        <form id="strengthForm">
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="form-group">
+                <label for="strength">Class Strength:</label>
+                <input type="number" id="strength" name="strength" min="0" required>
+            </div>
+            <button type="button" onclick="submitData()">Submit Strength</button>
+        </form>
+        <p id="submissionMessage"></p>
+    </div>
+
+    <div class="data-display">
+        <h2>Daily Statistics</h2>
+        <div id="dailyGraph" class="graph-placeholder">
+            Graph of Daily Strength
+        </div>
+        <div id="dailyStats">
+            <p>Today's Strength: <span id="todayStrength">-</span></p>
+        </div>
+    </div>
+
+    <div class="data-display">
+        <h2>Weekly Statistics</h2>
+        <div id="weeklyGraph" class="graph-placeholder">
+            Graph of Weekly Strength Trend
+        </div>
+        <div id="weeklyStats">
+            <p>Average Weekly Strength: <span id="averageWeekly">-</span></p>
+        </div>
+    </div>
+
+    <script>
+        function submitData() {
+            const dateInput = document.getElementById("date").value;
+            const strengthInput = document.getElementById("strength").value;
+            const submissionMessage = document.getElementById("submissionMessage");
+
+            // In a real application, you would send this data to a server-side script
+            // using technologies like Fetch API or XMLHttpRequest.
+            console.log(`Date: ${dateInput}, Strength: ${strengthInput}`);
+            submissionMessage.textContent = "Data submitted (not actually stored yet!).";
+
+            // To display graphs and actual statistics, you would need:
+            // 1. A database to store the data.
+            // 2. Server-side code to process the data and generate statistics.
+            // 3. JavaScript and a charting library (like Chart.js or D3.js) to display the graphs.
+        }
+    </script>
+</body>
+</html>

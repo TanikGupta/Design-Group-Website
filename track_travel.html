@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Travel - Safe India</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body { font-family: 'Arial', sans-serif; background-color: #f4f4f4; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+        .tracking-container { background-color: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); text-align: center; }
+        #location-info { margin-top: 1rem; font-weight: bold; }
+        .back-link { position: absolute; top: 20px; left: 20px; color: #3b82f6; text-decoration: none; }
+        .back-link:hover { text-decoration: underline; }
+        .track-button { background-color: #4caf50; color: white; border: none; padding: 1rem 2rem; border-radius: 5px; cursor: pointer; font-size: 1rem; margin-top: 1rem; }
+        .track-button:hover { background-color: #45a049; }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link"><i class="fas fa-arrow-left mr-2"></i> Back to Safe India</a>
+    <div class="tracking-container">
+        <h2>Track Your Travel</h2>
+        <p>Click the button below to get your current location.</p>
+        <button id="getLocationBtn" class="track-button">Get Current Location</button>
+        <div id="location-info"></div>
+    </div>
+
+    <script>
+        const locationInfo = document.getElementById('location-info');
+        const getLocationBtn = document.getElementById('getLocationBtn');
+
+        getLocationBtn.addEventListener('click', () => {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            } else {
+                locationInfo.innerHTML = "Geolocation is not supported by this browser.";
+            }
+        });
+
+        function showPosition(position) {
+            locationInfo.innerHTML = `Latitude: ${position.coords.latitude}<br>Longitude: ${position.coords.longitude}`;
+            // In a real application, you would send this data to a server.
+        }
+
+        function showError(error) {
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    locationInfo.innerHTML = "User denied the request for Geolocation.";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    locationInfo.innerHTML = "Location information is unavailable.";
+                    break;
+                case error.TIMEOUT:
+                    locationInfo.innerHTML = "The request to get user location timed out.";
+                    break;
+                case error.UNKNOWN_ERROR:
+                    locationInfo.innerHTML = "An unknown error occurred.";
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

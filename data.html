@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crime Statistics - Safe India</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Add Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            position: relative;
+        }
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('image.png');
+            background-size: cover;
+            opacity: 0.05;
+            z-index: -1;
+        }
+        .stat-card {
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(5px);
+        }
+        .chart-container {
+            position: relative;
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-blue-900 py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="text-white text-xl font-bold">Safe India</a>
+            <div class="space-x-4">
+                <a href="emergency_sos.html" target="_blank" class="text-red-500 hover:text-red-300 font-semibold">
+                    <i class="fas fa-phone-alt mr-1"></i> Emergency SOS
+                </a>
+                <a href="index.html" class="text-gray-300 hover:text-white">Back to Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-blue-900 mb-4">Crime Statistics in India</h1>
+            <p class="text-xl text-gray-600">Data-driven insights into violence against women</p>
+        </div>
+
+        <!-- Key Statistics -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div class="stat-card p-6 rounded-xl shadow-lg border-t-4 border-red-500">
+                <h3 class="text-xl font-semibold mb-4">Reported Cases (2023)</h3>
+                <p class="text-5xl font-bold text-red-600 mb-2">32,033</p>
+                <p class="text-gray-600">Rape cases reported nationwide</p>
+            </div>
+            <div class="stat-card p-6 rounded-xl shadow-lg border-t-4 border-blue-500">
+                <h3 class="text-xl font-semibold mb-4">Conviction Rate</h3>
+                <p class="text-5xl font-bold text-blue-600 mb-2">27.8%</p>
+                <p class="text-gray-600">Of total cases that reach conviction</p>
+            </div>
+            <div class="stat-card p-6 rounded-xl shadow-lg border-t-4 border-green-500">
+                <h3 class="text-xl font-semibold mb-4">Pending Cases</h3>
+                <p class="text-5xl font-bold text-green-600 mb-2">167,000+</p>
+                <p class="text-gray-600">Cases awaiting trial in courts</p>
+            </div>
+        </div>
+
+        <!-- Data Visualization -->
+        <div class="bg-white bg-opacity-90 p-8 rounded-xl shadow-lg mb-12">
+            <h2 class="text-2xl font-bold text-blue-900 mb-6">Trend Analysis (2018-2023)</h2>
+            <div class="chart-container">
+                <canvas id="trendChart"></canvas>
+            </div>
+            <div class="mt-4 text-sm text-gray-500 text-center">
+                Source: National Crime Records Bureau (NCRB) Annual Reports
+            </div>
+        </div>
+
+        <!-- Crime Type Distribution -->
+        <div class="bg-white bg-opacity-90 p-8 rounded-xl shadow-lg mb-12">
+            <h2 class="text-2xl font-bold text-blue-900 mb-6">Crime Type Distribution (2023)</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="chart-container">
+                    <canvas id="crimeTypeChart"></canvas>
+                </div>
+                <div>
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="font-semibold text-blue-900">Rape Cases</h3>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-red-600 h-2.5 rounded-full" style="width: 45%"></div>
+                            </div>
+                            <p class="text-sm text-gray-600 mt-1">45% of all reported crimes</p>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-blue-900">Domestic Violence</h3>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-orange-500 h-2.5 rounded-full" style="width: 32%"></div>
+                            </div>
+                            <p class="text-sm text-gray-600 mt-1">32% of all reported crimes</p>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-blue-900">Sexual Harassment</h3>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-yellow-500 h-2.5 rounded-full" style="width: 15%"></div>
+                            </div>
+                            <p class="text-sm text-gray-600 mt-1">15% of all reported crimes</p>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-blue-900">Other Crimes</h3>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-blue-500 h-2.5 rounded-full" style="width: 8%"></div>
+                            </div>
+                            <p class="text-sm text-gray-600 mt-1">8% of all reported crimes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- State-wise Data -->
+        <div class="bg-white bg-opacity-90 p-8 rounded-xl shadow-lg">
+            <h2 class="text-2xl font-bold text-blue-900 mb-6">State-wise Comparison</h2>
+            <div class="chart-container mb-8">
+                <canvas id="stateComparisonChart"></canvas>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white bg-opacity-70">
+                    <thead>
+                        <tr class="bg-blue-900 text-white">
+                            <th class="py-3 px-4 text-left">State</th>
+                            <th class="py-3 px-4 text-right">Cases per 100,000</th>
+                            <th class="py-3 px-4 text-right">% Change (YoY)</th>
+                            <th class="py-3 px-4 text-right">Conviction Rate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-gray-200 hover:bg-gray-50">
+                            <td class="py-3 px-4">Uttar Pradesh</td>
+                            <td class="py-3 px-4 text-right">14.2</td>
+                            <td class="py-3 px-4 text-right text-red-500">+8.3%</td>
+                            <td class="py-3 px-4 text-right">22.1%</td>
+                        </tr>
+                        <tr class="border-b border-gray-200 hover:bg-gray-50">
+                            <td class="py-3 px-4">Maharashtra</td>
+                            <td class="py-3 px-4 text-right">12.7</td>
+                            <td class="py-3 px-4 text-right text-green-500">-2.1%</td>
+                            <td class="py-3 px-4 text-right">31.5%</td>
+                        </tr>
+                        <tr class="border-b border-gray-200 hover:bg-gray-50">
+                            <td class="py-3 px-4">Madhya Pradesh</td>
+                            <td class="py-3 px-4 text-right">11.9</td>
+                            <td class="py-3 px-4 text-right text-red-500">+4.7%</td>
+                            <td class="py-3 px-4 text-right">28.9%</td>
+                        </tr>
+                        <tr class="border-b border-gray-200 hover:bg-gray-50">
+                            <td class="py-3 px-4">Rajasthan</td>
+                            <td class="py-3 px-4 text-right">10.5</td>
+                            <td class="py-3 px-4 text-right text-red-500">+3.2%</td>
+                            <td class="py-3 px-4 text-right">25.3%</td>
+                        </tr>
+                        <tr class="border-b border-gray-200 hover:bg-gray-50">
+                            <td class="py-3 px-4">West Bengal</td>
+                            <td class="py-3 px-4 text-right">9.8</td>
+                            <td class="py-3 px-4 text-right text-green-500">-1.5%</td>
+                            <td class="py-3 px-4 text-right">33.7%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p>©️ 2025 Safe India. All rights reserved.</p>
+            <p class="text-sm mt-2 text-gray-400">Data sourced from National Crime Records Bureau</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize charts when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Trend Chart (Line Chart)
+            const trendCtx = document.getElementById('trendChart').getContext('2d');
+            const trendChart = new Chart(trendCtx, {
+                type: 'line',
+                data: {
+                    labels: ['2018', '2019', '2020', '2021', '2022', '2023'],
+                    datasets: [{
+                        label: 'Reported Rape Cases',
+                        data: [28000, 29300, 25600, 28800, 31000, 32033],
+                        borderColor: 'rgb(220, 38, 38)',
+                        backgroundColor: 'rgba(220, 38, 38, 0.1)',
+                        borderWidth: 3,
+                        tension: 0.3,
+                        fill: true
+                    }, {
+                        label: 'Conviction Rate (%)',
+                        data: [24.5, 25.1, 26.3, 26.8, 27.2, 27.8],
+                        borderColor: 'rgb(37, 99, 235)',
+                        backgroundColor: 'rgba(37, 99, 235, 0.1)',
+                        borderWidth: 3,
+                        tension: 0.3,
+                        fill: true,
+                        yAxisID: 'y1'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: false,
+                            title: {
+                                display: true,
+                                text: 'Number of Cases'
+                            }
+                        },
+                        y1: {
+                            position: 'right',
+                            beginAtZero: true,
+                            max: 100,
+                            title: {
+                                display: true,
+                                text: 'Conviction Rate (%)'
+                            },
+                            grid: {
+                                drawOnChartArea: false
+                            }
+                        }
+                    },
+                    plugins: {
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false
+                        },
+                        legend: {
+                            position: 'top'
+                        }
+                    }
+                }
+            });
+
+            // Crime Type Chart (Doughnut)
+            const crimeTypeCtx = document.getElementById('crimeTypeChart').getContext('2d');
+            const crimeTypeChart = new Chart(crimeTypeCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Rape Cases', 'Domestic Violence', 'Sexual Harassment', 'Other Crimes'],
+                    datasets: [{
+                        data: [45, 32, 15, 8],
+                        backgroundColor: [
+                            'rgba(220, 38, 38, 0.7)',
+                            'rgba(249, 115, 22, 0.7)',
+                            'rgba(234, 179, 8, 0.7)',
+                            'rgba(59, 130, 246, 0.7)'
+                        ],
+                        borderColor: [
+                            'rgba(220, 38, 38, 1)',
+                            'rgba(249, 115, 22, 1)',
+                            'rgba(234, 179, 8, 1)',
+                            'rgba(59, 130, 246, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'right'
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return `${context.label}: ${context.raw}%`;
+                                }
+                            }
+                        }
+                    },
+                    cutout: '65%'
+                }
+            });
+
+            // State Comparison Chart (Bar Chart)
+            const stateCtx = document.getElementById('stateComparisonChart').getContext('2d');
+            const stateChart = new Chart(stateCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Uttar Pradesh', 'Maharashtra', 'Madhya Pradesh', 'Rajasthan', 'West Bengal'],
+                    datasets: [{
+                        label: 'Cases per 100,000 (2023)',
+                        data: [14.2, 12.7, 11.9, 10.5, 9.8],
+                        backgroundColor: 'rgba(59, 130, 246, 0.7)',
+                        borderColor: 'rgba(59, 130, 246, 1)',
+                        borderWidth: 1
+                    }, {
+                        label: 'Conviction Rate (%)',
+                        data: [22.1, 31.5, 28.9, 25.3, 33.7],
+                        backgroundColor: 'rgba(22, 163, 74, 0.7)',
+                        borderColor: 'rgba(22, 163, 74, 1)',
+                        borderWidth: 1,
+                        type: 'line',
+                        yAxisID: 'y1'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Cases per 100,000'
+                            }
+                        },
+                        y1: {
+                            position: 'right',
+                            beginAtZero: true,
+                            max: 100,
+                            title: {
+                                display: true,
+                                text: 'Conviction Rate (%)'
+                            },
+                            grid: {
+                                drawOnChartArea: false
+                            }
+                        }
+                    },
+                    plugins: {
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false
+                        },
+                        legend: {
+                            position: 'top'
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

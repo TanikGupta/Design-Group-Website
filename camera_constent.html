@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera Consent - Safe India</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body { font-family: 'Arial', sans-serif; background-color: #f0f0f0; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+        .camera-container { background-color: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); text-align: center; }
+        #video-feed { width: 400px; height: 300px; border: 1px solid black; margin-top: 1rem; }
+        .back-link { position: absolute; top: 20px; left: 20px; color: #3b82f6; text-decoration: none; }
+        .back-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link"><i class="fas fa-arrow-left mr-2"></i> Back to Safe India</a>
+    <div class="camera-container">
+        <h2>Camera Access</h2>
+        <p>This page will request access to your camera.</p>
+        <video id="video-feed" autoplay playsinline></video>
+    </div>
+
+    <script>
+        const videoFeed = document.getElementById('video-feed');
+
+        async function startCamera() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                videoFeed.srcObject = stream;
+            } catch (error) {
+                console.error('Error accessing camera:', error);
+                // Optionally display an error message to the user
+                videoFeed.style.display = 'none'; // Hide the video element if there's an error
+                const errorMessage = document.createElement('p');
+                errorMessage.textContent = 'Camera access denied or not available.';
+                document.querySelector('.camera-container').appendChild(errorMessage);
+            }
+        }
+
+        startCamera();
+    </script>
+</body>
+</html>

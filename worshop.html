@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awareness and Education - Safe India</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+        .option-block:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation Bar -->
+    <nav class="bg-blue-900 text-white fixed w-full z-10 top-0 shadow-lg">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Safe India</h1>
+            <div class="space-x-6">
+                <a href="index.html" class="hover:text-blue-300">Home</a>
+                <a href="#languages" class="hover:text-blue-300">Languages</a>
+                <a href="index.html#contact" class="hover:text-blue-300">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="py-16 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <a href="index.html" class="inline-block text-blue-600 hover:underline mb-6">
+                    <i class="fas fa-arrow-left mr-2"></i> Back to Safe India
+                </a>
+                <h1 class="text-3xl font-bold text-blue-900 mb-4">Awareness and Education</h1>
+                <p class="text-lg text-gray-600">Explore our initiatives to promote awareness and education for a safer India.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Legal Support Block -->
+                <div class="option-block bg-white p-8 rounded-xl shadow-md border-l-4 border-blue-600 transition duration-300 cursor-pointer" 
+                     onclick="window.location.href='legal-support.html'">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-gavel text-4xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-3">Legal Support</h2>
+                    <p class="text-gray-600 mb-4">Access resources and guidance on legal rights, filing complaints, and navigating the justice system.</p>
+                    <div class="text-blue-600 font-medium">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </div>
+                </div>
+
+                <!-- Workshops for Awareness Block -->
+                <div class="option-block bg-white p-8 rounded-xl shadow-md border-l-4 border-purple-600 transition duration-300 cursor-pointer"
+                     onclick="window.location.href='workshops.html'">
+                    <div class="text-purple-600 mb-4">
+                        <i class="fas fa-book text-4xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-3">Workshops for Awareness</h2>
+                    <p class="text-gray-600 mb-4">Join our workshops to learn about gender sensitization, safety measures, and community empowerment.</p>
+                    <div class="text-purple-600 font-medium">
+                        View Schedule <i class="fas fa-arrow-right ml-2"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2025 Safe India. All rights reserved.</p>
+            <div class="mt-2">
+                <a href="#" class="text-gray-400 hover:text-white mx-2"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white mx-2"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white mx-2"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="mt-4">
+                <a href="frontend.html" class="text-blue-400 hover:underline">Back to Overview</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

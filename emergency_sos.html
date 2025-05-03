@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency SOS - Safe India</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body { font-family: 'Arial', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #f8f8f8; }
+        .buzzer-container { text-align: center; }
+        .buzzer {
+            background-color: #dc2626; /* Red color */
+            color: white;
+            border: none;
+            padding: 4rem 6rem;
+            border-radius: 50%;
+            font-size: 2rem;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.1s ease-in-out;
+        }
+        .buzzer:active {
+            transform: scale(0.95);
+        }
+        #audio { display: none; }
+        .back-link { position: absolute; top: 20px; left: 20px; color: #3b82f6; text-decoration: none; }
+        .back-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link"><i class="fas fa-arrow-left mr-2"></i> Back to Safe India</a>
+    <div class="buzzer-container">
+        <button id="sosButton" class="buzzer">SOS</button>
+        <audio id="audio" src="ringing.mp3" loop></audio>
+        <p class="mt-4 text-gray-600">Press the button in case of emergency.</p>
+    </div>
+
+    <script>
+        const sosButton = document.getElementById('sosButton');
+        const audio = document.getElementById('audio');
+        let isRinging = false;
+
+        sosButton.addEventListener('click', () => {
+            if (isRinging) {
+                audio.pause();
+                audio.currentTime = 0;
+                isRinging = false;
+                sosButton.textContent = 'SOS';
+            } else {
+                audio.play();
+                isRinging = true;
+                sosButton.textContent = 'STOP';
+            }
+        });
+    </script>
+</body>
+</html>
